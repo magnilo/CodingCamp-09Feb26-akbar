@@ -5,9 +5,10 @@ export function mountNavbar(selector = "#navbar", opts = {}) {
   const { active = "home" } = opts;
 
   el.innerHTML = `
-    <header class="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/80 backdrop-blur">
+    <header class="sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="/" class="flex items-center gap-2 font-semibold text-xl tracking-tight">
+          <img src="/images/logo.svg" alt="Portfolio" class="h-8 w-8 rounded-lg" />
           <span>Portfolio.dev</span>
         </a>
 
@@ -25,7 +26,7 @@ export function mountNavbar(selector = "#navbar", opts = {}) {
           </button>
 
           <a href="/dashboard.html"
-            class="rounded-xl bg-white px-3 py-2 text-sm font-semibold text-zinc-900 hover:bg-zinc-200">
+            class="rounded-xl bg-white px-3 py-2 text-sm font-semibold text-zinc-950 hover:bg-zinc-200 transition">
             Dashboard
           </a>
         </div>

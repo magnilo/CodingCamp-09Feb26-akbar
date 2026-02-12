@@ -10,7 +10,7 @@ let projectsCache = [];
 
 function projectCard(p) {
   return `
-  <article class="group overflow-hidden rounded-3xl border border-white/10 bg-white/5">
+  <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
     <div class="aspect-[16/10] overflow-hidden">
       <img src="${p.image}" alt="${p.title}"
         class="h-full w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.03]" />
@@ -28,7 +28,7 @@ function projectCard(p) {
           .join("")}
       </div>
       <div class="mt-5 flex gap-3 text-sm">
-        <a class="rounded-xl bg-white px-3 py-2 font-semibold text-zinc-900 hover:bg-zinc-200"
+        <a class="rounded-xl bg-white px-3 py-2 font-semibold text-zinc-950 hover:bg-white"
            href="${p.demo}" target="_blank" rel="noreferrer">Demo</a>
         <a class="rounded-xl border border-white/10 px-3 py-2 text-zinc-100 hover:bg-white/5"
            href="${p.repo}" target="_blank" rel="noreferrer">Repo</a>
