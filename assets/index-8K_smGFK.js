@@ -1,4 +1,4 @@
-(function(){const r=document.createElement("link").relList;if(r&&r.supports&&r.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))o(t);new MutationObserver(t=>{for(const s of t)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function n(t){const s={};return t.integrity&&(s.integrity=t.integrity),t.referrerPolicy&&(s.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?s.credentials="include":t.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(t){if(t.ep)return;t.ep=!0;const s=n(t);fetch(t.href,s)}})();function d(e="#navbar",r={}){const n=document.querySelector(e);if(!n)return;const{active:o="home"}=r;n.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const r of document.querySelectorAll('link[rel="modulepreload"]'))o(r);new MutationObserver(r=>{for(const s of r)if(s.type==="childList")for(const i of s.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&o(i)}).observe(document,{childList:!0,subtree:!0});function n(r){const s={};return r.integrity&&(s.integrity=r.integrity),r.referrerPolicy&&(s.referrerPolicy=r.referrerPolicy),r.crossOrigin==="use-credentials"?s.credentials="include":r.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function o(r){if(r.ep)return;r.ep=!0;const s=n(r);fetch(r.href,s)}})();function d(e="#navbar",t={}){const n=document.querySelector(e);if(!n)return;const{active:o="home"}=t;n.innerHTML=`
     <header class="sticky top-0 z-50 border-b border-white/5 bg-black/80 backdrop-blur-md">
       <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <a href="./" class="flex items-center gap-2 font-semibold text-xl tracking-tight">
@@ -26,10 +26,10 @@
         </div>
       </div>
     </header>
-  `}console.log("Main JS loaded, styles imported");d();document.getElementById("year").textContent=new Date().getFullYear();let a=[];function m(e){return`
+  `}console.log("Main JS loaded, styles imported");d();document.getElementById("year").textContent=new Date().getFullYear();let a=[];function u(e){return`
   <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
     <div class="aspect-[16/10] overflow-hidden">
-      <img src="${`/CodingCamp-09Feb26-akbar/${e.image}`}" alt="${e.title}"
+      <img src="${new URL(e.image,"/CodingCamp-09Feb26-akbar/").toString()}" alt="${e.title}"
         class="h-full w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.03]" />
     </div>
     <div class="p-5">
@@ -45,4 +45,4 @@
            href="${e.repo}" target="_blank" rel="noreferrer">Repo</a>
       </div>
     </div>
-  </article>`}function l(e){const r=document.getElementById("projectsGrid");r.innerHTML=e.map(m).join("")}async function u(){a=await(await fetch("/CodingCamp-09Feb26-akbar/data/projects.json")).json(),l(a)}u();document.getElementById("projectSearch").addEventListener("input",e=>{const r=e.target.value.trim().toLowerCase(),n=r?a.filter(o=>`${o.title} ${o.desc} ${(o.tags||[]).join(" ")}`.toLowerCase().includes(r)):a;l(n)});const c=document.getElementById("contactForm"),f=document.getElementById("contactStatus");c.addEventListener("submit",e=>{e.preventDefault();const r=Object.fromEntries(new FormData(c).entries());f.textContent=` Sent (demo). Thanks, ${r.name}!`,c.reset()});
+  </article>`}function l(e){const t=document.getElementById("projectsGrid");t.innerHTML=e.map(u).join("")}async function m(){const e=new URL("data/projects.json","/CodingCamp-09Feb26-akbar/").toString();console.log("Fetching projects from:",e);const t=await fetch(e);if(!t.ok)throw new Error(`Failed to fetch projects.json: ${t.status} ${t.statusText}`);a=await t.json(),l(a)}m().catch(e=>console.error(e));document.getElementById("projectSearch").addEventListener("input",e=>{const t=e.target.value.trim().toLowerCase(),n=t?a.filter(o=>`${o.title} ${o.desc} ${(o.tags||[]).join(" ")}`.toLowerCase().includes(t)):a;l(n)});const c=document.getElementById("contactForm"),h=document.getElementById("contactStatus");c.addEventListener("submit",e=>{e.preventDefault();const t=Object.fromEntries(new FormData(c).entries());h.textContent=` Sent (demo). Thanks, ${t.name}!`,c.reset()});
