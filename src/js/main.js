@@ -62,7 +62,6 @@ document.getElementById("projectSearch").addEventListener("input", (e) => {
   renderProjects(filtered);
 });
 
-// Demo contact
 const form = document.getElementById("contactForm");
 const statusEl = document.getElementById("contactStatus");
 
