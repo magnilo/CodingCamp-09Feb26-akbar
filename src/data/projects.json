@@ -1,0 +1,34 @@
+[
+  {
+    "title": "SISKA - Sistem Informasi Kasir Apotek",
+    "desc": "A robust Desktop application for managing sales and inventory efficiently.",
+    "tags": ["Java", "NetBeans", "MySQL"],
+    "image": "https://placehold.co/600x400?text=SISKA",
+    "demo": "https://youtu.be/cTq3KMYNgJw",
+    "repo": "https://github.com/magnilo/TIF_EXIBITION_DESKTOP.git"
+  },
+  {
+    "title": "E-Surat Badean",
+    "desc": "Real-time Website dashboard for letters system.",
+    "tags": ["PHP", "MySQL", "Tailwind"],
+    "image": "https://placehold.co/600x400?text=E-Surat+Badean",
+    "demo": "https://youtu.be/0fHorEil6GI",
+    "repo": "https://github.com/magnilo/sibadeanweb_v2.git"
+  },
+  {
+    "title": "E-Surat Badean: Mobile App",
+    "desc": "A mobile application for managing letters and workflows efficiently.",
+    "tags": ["Flutter", "MySQL", "PHP"],
+    "image": "https://placehold.co/600x400?text=E-Surat+Badean+Mobile",
+    "demo": "https://youtu.be/0fHorEil6GI",
+    "repo": "https://github.com/magnilo/sibadeanmobfix2.git"
+  },
+  {
+    "title": "AQUANEX - Aquaponic Network Experience",
+    "desc": "Mobile application for monitoring aquaponic system using SVM (Support Vector Machine) for prediction.",
+    "tags": ["Flutter", "C++", "ESP32"],
+    "image": "../images/aquanex.jpeg",
+    "demo": "https://youtu.be/wjYAIZ7-O_4",
+    "repo": "https://github.com/magnilo/Aquaponic.git"
+  }
+]

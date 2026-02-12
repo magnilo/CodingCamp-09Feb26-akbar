@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard — John Doe</title>
+    <link rel="icon" href="/favicon.ico" />
+  </head>
+  <body
+    class="min-h-screen bg-zinc-950 text-zinc-100 antialiased selection:bg-emerald-500/30"
+  >
+    <div id="navbar"></div>
+
+    <main class="mx-auto max-w-6xl px-4 py-14 md:py-24">
+      <div
+        class="rounded-3xl border border-white/10 bg-white/5 p-10 text-center"
+      >
+        <h1 class="text-3xl font-bold text-white">Dashboard</h1>
+        <p class="mt-4 text-zinc-400">This is a protected area. (Demo Page)</p>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="rounded-2xl bg-zinc-900/50 p-6 border border-white/10">
+            <p class="text-4xl font-bold text-emerald-400">12</p>
+            <p class="text-sm text-zinc-500 mt-1">Active Projects</p>
+          </div>
+          <div class="rounded-2xl bg-zinc-900/50 p-6 border border-white/10">
+            <p class="text-4xl font-bold text-sky-400">2.4k</p>
+            <p class="text-sm text-zinc-500 mt-1">Total Views</p>
+          </div>
+          <div class="rounded-2xl bg-zinc-900/50 p-6 border border-white/10">
+            <p class="text-4xl font-bold text-amber-400">98%</p>
+            <p class="text-sm text-zinc-500 mt-1">Satisfaction</p>
+          </div>
+          <div class="rounded-2xl bg-zinc-900/50 p-6 border border-white/10">
+            <p class="text-4xl font-bold text-rose-400">5</p>
+            <p class="text-sm text-zinc-500 mt-1">Pending Requests</p>
+          </div>
+        </div>
+        <div class="mt-10">
+          <a
+            href="/"
+            class="text-sm font-semibold text-zinc-400 hover:text-white transition"
+            >← Back to Portfolio</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <script type="module">
+      import "/src/styles/main.css";
+      import { mountNavbar } from "/src/js/components/navbar.js";
+      mountNavbar("#navbar", { active: "dashboard" });
+    </script>
+  </body>
+</html>
