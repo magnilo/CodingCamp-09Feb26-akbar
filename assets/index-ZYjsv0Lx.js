@@ -29,7 +29,7 @@
   `}console.log("Main JS loaded, styles imported");d();document.getElementById("year").textContent=new Date().getFullYear();let a=[];function m(e){return`
   <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
     <div class="aspect-[16/10] overflow-hidden">
-      <img src="${e.image.startsWith("http")?e.image:new URL(e.image,"/CodingCamp-09Feb26-akbar/").toString()}" alt="${e.title}"
+      <img src="${e.image.startsWith("http")?e.image:`/CodingCamp-09Feb26-akbar/${e.image.replace(/^\//,"")}`}" alt="${e.title}"
         class="h-full w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.03]" />
     </div>
     <div class="p-5">
@@ -45,4 +45,4 @@
            href="${e.repo}" target="_blank" rel="noreferrer">Repo</a>
       </div>
     </div>
-  </article>`}function l(e){const t=document.getElementById("projectsGrid");t.innerHTML=e.map(m).join("")}async function h(){const e=new URL("data/projects.json","/CodingCamp-09Feb26-akbar/").toString();console.log("Fetching projects from:",e);const t=await fetch(e);if(!t.ok)throw new Error(`Failed to fetch projects.json: ${t.status} ${t.statusText}`);a=await t.json(),l(a)}h().catch(e=>console.error(e));document.getElementById("projectSearch").addEventListener("input",e=>{const t=e.target.value.trim().toLowerCase(),n=t?a.filter(o=>`${o.title} ${o.desc} ${(o.tags||[]).join(" ")}`.toLowerCase().includes(t)):a;l(n)});const c=document.getElementById("contactForm"),u=document.getElementById("contactStatus");c.addEventListener("submit",e=>{e.preventDefault();const t=Object.fromEntries(new FormData(c).entries());u.textContent=` Sent (demo). Thanks, ${t.name}!`,c.reset()});
+  </article>`}function l(e){const t=document.getElementById("projectsGrid");t.innerHTML=e.map(m).join("")}async function h(){const e="/CodingCamp-09Feb26-akbar/data/projects.json";console.log("Fetching projects from:",e);const t=await fetch(e);if(!t.ok)throw new Error(`Failed to fetch projects.json: ${t.status} ${t.statusText}`);a=await t.json(),l(a)}h().catch(e=>console.error(e));document.getElementById("projectSearch").addEventListener("input",e=>{const t=e.target.value.trim().toLowerCase(),n=t?a.filter(o=>`${o.title} ${o.desc} ${(o.tags||[]).join(" ")}`.toLowerCase().includes(t)):a;l(n)});const c=document.getElementById("contactForm"),u=document.getElementById("contactStatus");c.addEventListener("submit",e=>{e.preventDefault();const t=Object.fromEntries(new FormData(c).entries());u.textContent=` Sent (demo). Thanks, ${t.name}!`,c.reset()});
