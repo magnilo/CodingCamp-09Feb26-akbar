@@ -9,7 +9,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 let projectsCache = [];
 
 function projectCard(p) {
-  const imgSrc = `${import.meta.env.BASE_URL}${p.image}`;
+  const imgSrc = new URL(p.image, import.meta.env.BASE_URL).toString();
 
   return `
   <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
@@ -45,12 +45,23 @@ function renderProjects(list) {
 }
 
 async function loadProjects() {
-  const res = await fetch(`${import.meta.env.BASE_URL}data/projects.json`);
+  const url = new URL(
+    "data/projects.json",
+    import.meta.env.BASE_URL,
+  ).toString();
+  console.log("Fetching projects from:", url);
+
+  const res = await fetch(url);
+  if (!res.ok)
+    throw new Error(
+      `Failed to fetch projects.json: ${res.status} ${res.statusText}`,
+    );
+
   projectsCache = await res.json();
   renderProjects(projectsCache);
 }
 
-loadProjects();
+loadProjects().catch((err) => console.error(err));
 
 document.getElementById("projectSearch").addEventListener("input", (e) => {
   const q = e.target.value.trim().toLowerCase();
