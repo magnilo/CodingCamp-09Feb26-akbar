@@ -9,7 +9,11 @@ document.getElementById("year").textContent = new Date().getFullYear();
 let projectsCache = [];
 
 function projectCard(p) {
-  const imgSrc = new URL(p.image, import.meta.env.BASE_URL).toString();
+  // If p.image is an absolute URL (http/https), use it directly.
+  // Otherwise, treat it as relative to the base URL.
+  const imgSrc = p.image.startsWith("http")
+    ? p.image
+    : `${import.meta.env.BASE_URL}${p.image.replace(/^\//, "")}`; // Ensure no double slash if p.image starts with /
 
   return `
   <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
@@ -45,10 +49,10 @@ function renderProjects(list) {
 }
 
 async function loadProjects() {
-  const url = new URL(
-    "data/projects.json",
-    import.meta.env.BASE_URL,
-  ).toString();
+  // Fix: import.meta.env.BASE_URL is a path (e.g. "/repo/"), not a full URL,
+  // so new URL() constructor fails if used as base without origin.
+  // We can just concatenate since BASE_URL includes trailing slash.
+  const url = `${import.meta.env.BASE_URL}data/projects.json`;
   console.log("Fetching projects from:", url);
 
   const res = await fetch(url);
