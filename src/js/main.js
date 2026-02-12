@@ -9,10 +9,12 @@ document.getElementById("year").textContent = new Date().getFullYear();
 let projectsCache = [];
 
 function projectCard(p) {
+  const imgSrc = `${import.meta.env.BASE_URL}${p.image}`;
+
   return `
   <article class="group overflow-hidden rounded-3xl border border-white/5 bg-zinc-900/20 hover:border-white/10 transition-colors">
     <div class="aspect-[16/10] overflow-hidden">
-      <img src="${p.image}" alt="${p.title}"
+      <img src="${imgSrc}" alt="${p.title}"
         class="h-full w-full object-cover opacity-90 transition duration-300 group-hover:scale-[1.03]" />
     </div>
     <div class="p-5">
@@ -43,7 +45,7 @@ function renderProjects(list) {
 }
 
 async function loadProjects() {
-  const res = await fetch("/src/data/projects.json");
+  const res = await fetch(`${import.meta.env.BASE_URL}data/projects.json`);
   projectsCache = await res.json();
   renderProjects(projectsCache);
 }

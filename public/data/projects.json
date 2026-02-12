@@ -27,7 +27,7 @@
     "title": "AQUANEX - Aquaponic Network Experience",
     "desc": "Mobile application for monitoring aquaponic system using SVM (Support Vector Machine) for prediction.",
     "tags": ["Flutter", "C++", "ESP32"],
-    "image": "../images/aquanex.jpeg",
+    "image": "images/aquanex.jpeg",
     "demo": "https://youtu.be/wjYAIZ7-O_4",
     "repo": "https://github.com/magnilo/Aquaponic.git"
   }
