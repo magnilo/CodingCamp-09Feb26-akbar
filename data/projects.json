@@ -3,7 +3,7 @@
     "title": "SISKA - Sistem Informasi Kasir Apotek",
     "desc": "A robust Desktop application for managing sales and inventory efficiently.",
     "tags": ["Java", "NetBeans", "MySQL"],
-    "image": "https://placehold.co/600x400?text=SISKA",
+    "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop",
     "demo": "https://youtu.be/cTq3KMYNgJw",
     "repo": "https://github.com/magnilo/TIF_EXIBITION_DESKTOP.git"
   },
@@ -11,7 +11,7 @@
     "title": "E-Surat Badean",
     "desc": "Real-time Website dashboard for letters system across the village.",
     "tags": ["PHP", "MySQL", "Tailwind"],
-    "image": "https://placehold.co/600x400?text=E-Surat+Badean",
+    "image": "https://images.unsplash.com/photo-1554224311-beee4f948415?w=600&h=400&fit=crop",
     "demo": "https://youtu.be/0fHorEil6GI",
     "repo": "https://github.com/magnilo/sibadeanweb_v2.git"
   },
@@ -19,7 +19,7 @@
     "title": "E-Surat Badean: Mobile App",
     "desc": "A mobile application for managing letters and workflows efficiently.",
     "tags": ["Flutter", "MySQL", "PHP"],
-    "image": "https://placehold.co/600x400?text=E-Surat+Badean+Mobile",
+    "image": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
     "demo": "https://youtu.be/0fHorEil6GI",
     "repo": "https://github.com/magnilo/sibadeanmobfix2.git"
   },
